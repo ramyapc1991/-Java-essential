@@ -15,8 +15,9 @@ public class Greeting {
 
         Greet helloWorldMsg = () -> System.out.println("Hello World from Lambda expression");
         greeting.greet(helloWorldMsg);
+        greeting.greet(() -> System.out.println("Hello World from Lambda expression inline "));
         AddNumber addNumber = (int a, int b) -> a+b;
-        System.out.println("adding is "+ addNumber.add(5,6));
+        System.out.println("addition is "+ addNumber.add(5,6));
 
 
         Greet innerClassGreet = new Greet() {
