@@ -13,10 +13,19 @@ public class Greeting {
         HelloWorldGreet greet = new HelloWorldGreet();
         greeting.greet(greet);
 
-        MyLambda helloWorldMsg = () -> System.out.println("Hello World from Lambda expression");
-        helloWorldMsg.foo();
+        Greet helloWorldMsg = () -> System.out.println("Hello World from Lambda expression");
+        greeting.greet(helloWorldMsg);
         AddNumber addNumber = (int a, int b) -> a+b;
-        System.out.println("adding is "+addNumber.add(5,6));
+        System.out.println("adding is "+ addNumber.add(5,6));
+
+
+        Greet innerClassGreet = new Greet() {
+            @Override
+            public void perform() {
+                System.out.println("Hello world from inner class");
+            }
+        };
+        greeting.greet(innerClassGreet);
     }
 }
 
