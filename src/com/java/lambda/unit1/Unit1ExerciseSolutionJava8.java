@@ -1,8 +1,7 @@
-package com.java.lambda;
+package com.java.lambda.unit1;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -34,9 +33,9 @@ public class Unit1ExerciseSolutionJava8 {
 
     }
 
-    private static void printConditionally(List<Person> people, Predicate<Person> personPredicate) {
+    private static void printConditionally(List<Person> people, ConditionCheck conditionCheck) {
         for(Person p:people){
-            if(personPredicate.test(p)){
+            if(conditionCheck.test(p)){
                 System.out.println(p);
             }
         }
